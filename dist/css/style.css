@@ -1037,11 +1037,12 @@ h1, .h1 {
 }
 
 h2, .h2 {
-  font-size: 32px;
+  font-size: 40px;
+  font-weight: 900;
 }
 @media (max-width: 991px) {
   h2, .h2 {
-    font-size: 20px;
+    font-size: 24px;
   }
 }
 
@@ -1153,12 +1154,56 @@ h3, .h3 {
   }
 }
 
+.stepSlider .swiper-wrapper {
+  align-items: center;
+}
+.stepSlider .swiper-pagination {
+  position: relative;
+  margin-top: 20px;
+}
+
+.stepSlide {
+  width: 120px;
+}
+.stepSlide img {
+  width: 120px;
+  height: 75px;
+  object-fit: cover;
+}
+.stepSlide.swiper-slide-active {
+  width: calc(100% - 240px);
+}
+.stepSlide.swiper-slide-active img {
+  width: 100%;
+  height: 350px;
+  object-fit: cover;
+}
+
+.stepBlockTitle {
+  margin-bottom: 35px;
+}
+.stepBlockTitle span {
+  color: #0059FF;
+}
+
+.stepBlock {
+  padding-top: 70px;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
+
 .button {
   display: flex;
   align-items: center;
   justify-content: center;
   width: fit-content;
-  transition: background-color 0.2s linear, color 0.2s linear;
+  transition: background-color 0.2s linear, color 0.2s linear, opacity 0.2s linear;
   column-gap: 10px;
   height: 61px;
   border-radius: 8px;
@@ -1175,6 +1220,9 @@ h3, .h3 {
 .button--blue {
   background-color: #0059FF;
   color: #fff;
+}
+.button--blue:hover {
+  opacity: 0.85;
 }
 
 .headerBtn {

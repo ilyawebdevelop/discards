@@ -4,7 +4,7 @@
   align-items: center;
   justify-content: center;
   width: fit-content;
-  transition: background-color .2s linear, color .2s linear;
+  transition: background-color .2s linear, color .2s linear, opacity .2s linear;
   column-gap: 10px;
   height: 61px;
   border-radius: 8px;
@@ -21,6 +21,9 @@
   &--blue {
     background-color: #0059FF;
     color: #fff;
+    &:hover {
+      opacity: .85;
+    }
   }
 }
 
