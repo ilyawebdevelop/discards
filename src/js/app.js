@@ -9,17 +9,48 @@ flsFunctions.isWebp();
 import Swiper, { Navigation, Pagination, Autoplay, Mousewheel, EffectFade, Thumbs, Scrollbar } from 'swiper';
 Swiper.use([Navigation, Pagination, Autoplay, Mousewheel, EffectFade, Thumbs, Scrollbar]);
 
-let stepsSlidePrev = document.querySelector('.stepsSlidePrev');
-let stepsSlideNext = document.querySelector('.stepsSlideNext');
+
+
 
 function getSwiperImage() {
   setTimeout(() => {
-    let imgPrevSrc = this.el.querySelector(".swiper-slide-prev img").src;
-    let imgNextSrc = this.el.querySelector(".swiper-slide-next img").src;
-    console.log(imgPrevSrc);
-    console.log(imgNextSrc);
-    stepsSlidePrev.src = imgPrevSrc;
-    stepsSlideNext.src = imgNextSrc;
+
+    let stepsSlidePrev = this.el.closest('.stepBlock').querySelector('.stepsSlidePrev');
+    let stepsSlideNext = this.el.closest('.stepBlock').querySelector('.stepsSlideNext');
+
+    if (stepsSlidePrev && this.el.querySelector(".swiper-slide-prev img")) {
+      let imgPrevSrc = this.el.querySelector(".swiper-slide-prev img").src;
+      stepsSlidePrev.src = imgPrevSrc;
+      stepsSlidePrev.classList.remove('hide');
+    }   
+    if(this.el.querySelector(".swiper-slide-prev") == null && stepsSlidePrev){
+      stepsSlidePrev.classList.add('hide');     
+    }
+    if (stepsSlideNext && this.el.querySelector(".swiper-slide-next img")) {
+      let imgNextSrc = this.el.querySelector(".swiper-slide-next img").src;
+      stepsSlideNext.src = imgNextSrc;     
+      stepsSlideNext.classList.remove('hide');
+    }
+    if(this.el.querySelector(".swiper-slide-next") == null && stepsSlideNext){
+      stepsSlideNext.classList.add('hide');     
+    }
+
+    let stepsSlideSumPrev = this.el.closest('.stepBlock').querySelector('.stepsSlideSumPrev');
+    let stepsSlideSumNext = this.el.closest('.stepBlock').querySelector('.stepsSlideSumNext');
+
+    let sumPrev = this.el.querySelector(".swiper-slide-prev")?.textContent;
+    let sumNext = this.el.querySelector(".swiper-slide-next")?.textContent;
+
+
+    if (stepsSlideSumPrev) {
+      stepsSlideSumPrev.textContent = sumPrev;
+    }
+    if (stepsSlideSumNext) {
+      stepsSlideSumNext.textContent = sumNext;
+    }
+
+
+
   }, "100");
 
 }
@@ -30,7 +61,7 @@ document.querySelectorAll('.stepSlider').forEach(n => {
     slidesPerView: 1,
     spaceBetween: 24,
     speed: 600,
-    loop: true,
+    loop: false,
     navigation: {
       nextEl: n?.closest('.stepSliderW').querySelector('.navArrowNext'),
       prevEl: n?.closest('.stepSliderW').querySelector('.navArrowPrev'),
