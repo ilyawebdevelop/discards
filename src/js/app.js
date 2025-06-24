@@ -12,13 +12,16 @@ Swiper.use([Navigation, Pagination, Autoplay, Mousewheel, EffectFade, Thumbs, Sc
 let stepsSlidePrev = document.querySelector('.stepsSlidePrev');
 let stepsSlideNext = document.querySelector('.stepsSlideNext');
 
-function getSwiperImage() { 
-  let imgPrevSrc = this.el.querySelector(".swiper-slide-prev img").src;
-  let imgNextSrc = this.el.querySelector(".swiper-slide-next img").src;
-  console.log(imgPrevSrc);
-  console.log(imgNextSrc);
-  stepsSlidePrev.src = imgPrevSrc;
-  stepsSlideNext.src = imgNextSrc;
+function getSwiperImage() {
+  setTimeout(() => {
+    let imgPrevSrc = this.el.querySelector(".swiper-slide-prev img").src;
+    let imgNextSrc = this.el.querySelector(".swiper-slide-next img").src;
+    console.log(imgPrevSrc);
+    console.log(imgNextSrc);
+    stepsSlidePrev.src = imgPrevSrc;
+    stepsSlideNext.src = imgNextSrc;
+  }, "100");
+
 }
 
 // Инициализация слайдера stepSlider
