@@ -1016,41 +1016,54 @@ section {
   max-width: 100%;
 }
 
-h1, .h1,
-h2, .h2,
-h3, .h3,
-h4, .h4,
-h5, .h5,
-h6, .h6 {
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
   font-family: var(--font-family);
   color: #000;
   font-weight: 500;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   font-size: 36px;
 }
 @media (max-width: 991px) {
-  h1, .h1 {
+  h1,
+.h1 {
     font-size: 24px;
   }
 }
 
-h2, .h2 {
+h2,
+.h2 {
   font-size: 40px;
+  line-height: normal;
   font-weight: 900;
 }
 @media (max-width: 991px) {
-  h2, .h2 {
+  h2,
+.h2 {
     font-size: 24px;
   }
 }
 
-h3, .h3 {
+h3,
+.h3 {
   font-size: 24px;
 }
 @media (max-width: 991px) {
-  h3, .h3 {
+  h3,
+.h3 {
     font-size: 16px;
   }
 }
@@ -1154,29 +1167,48 @@ h3, .h3 {
   }
 }
 
+.stepsSliderInner {
+  display: block;
+  position: relative;
+  border-radius: 16px;
+}
+.stepsSliderInner::before {
+  content: "";
+  position: absolute;
+  left: -25px;
+  top: -14px;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid #EBEBEB;
+}
+.stepsSliderInner::after {
+  content: "";
+  position: absolute;
+  right: -25px;
+  bottom: -14px;
+  height: 100%;
+  width: 100%;
+  border-radius: 16px;
+  border: 2px solid #EBEBEB;
+}
+
+.stepSlider {
+  display: block;
+  border-radius: 16px;
+  width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
 .stepSlider .swiper-wrapper {
   align-items: center;
 }
-.stepSlider .swiper-pagination {
-  position: relative;
-  margin-top: 20px;
-}
 
-.stepSlide {
-  width: 120px;
-}
 .stepSlide img {
-  width: 120px;
-  height: 75px;
-  object-fit: cover;
-}
-.stepSlide.swiper-slide-active {
-  width: calc(100% - 240px);
-}
-.stepSlide.swiper-slide-active img {
   width: 100%;
   height: 350px;
   object-fit: cover;
+  border-radius: 16px;
 }
 
 .stepBlockTitle {
@@ -1189,6 +1221,10 @@ h3, .h3 {
 .stepBlock {
   padding-top: 70px;
 }
+.stepBlock .swiper-pagination {
+  position: relative;
+  margin-top: 35px;
+}
 
 .text-center {
   text-align: center;
@@ -1196,6 +1232,69 @@ h3, .h3 {
 
 .ttu {
   text-transform: uppercase;
+}
+
+.stepsSlideThumb {
+  width: 120px;
+  height: 75px;
+  object-fit: cover;
+  flex-shrink: 0;
+  border-radius: 8px;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.16);
+}
+
+.stepSliderW {
+  display: flex;
+  align-items: center;
+  column-gap: 64px;
+  width: 100%;
+  justify-content: center;
+}
+.stepSliderW .navArrow {
+  flex-shrink: 0;
+  border-radius: 20px;
+  background: #F8F8F8;
+  box-shadow: 0px 2px 8px 0px rgba(0, 0, 0, 0.16);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.stepSliderW .navArrow:hover svg {
+  stroke: #0059FF;
+}
+.stepSliderW .navArrow:active {
+  background-color: #0059FF;
+}
+.stepSliderW .navArrow:active svg {
+  stroke: #fff;
+}
+.stepSliderW .navArrow:focus {
+  background-color: #0059FF;
+}
+.stepSliderW .navArrow:focus svg {
+  stroke: #fff;
+}
+.stepSliderW .navArrow img {
+  width: 24px;
+}
+.stepSliderW .navArrow svg {
+  width: 24px;
+  height: 24px;
+  stroke: #000;
+  fill: transparent;
+}
+.stepSliderW .navArrow.swiper-button-disabled {
+  background-color: #F8F8F8;
+}
+.stepSliderW .navArrow.swiper-button-disabled svg {
+  stroke: #D8D8D8;
+}
+
+.stepsSliderRow {
+  display: flex;
+  align-items: center;
 }
 
 .button {
@@ -1352,6 +1451,7 @@ h3, .h3 {
   padding-top: 30px;
   padding-bottom: 30px;
   background-color: #fff;
+  border-top: 1px solid #E2E2E2;
 }
 .footerW {
   display: flex;

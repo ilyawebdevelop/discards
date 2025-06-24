@@ -5,37 +5,64 @@
       Это короткий приветственный текст
     </div>
 
-    <div class="stepBlock step-1 stepSliderW">
+    <div class="stepBlock step-1">
 
       <h3 class="h2 stepBlockTitle text-center ttu">
         Выберите <span>дизайн</span>
       </h3>
 
-      <div class="swiper stepSlider">
-        <div class="swiper-wrapper">
+      <div class="stepsSliderRow">
 
-          <div class="swiper-slide stepSlide">
-            <img src="@img/admin/content/image-1.jpg" alt="image">
-          </div>
-          <div class="swiper-slide stepSlide">
-            <img src="@img/admin/content/image-2.jpg" alt="image">
-          </div>
-          <div class="swiper-slide stepSlide">
-            <img src="@img/admin/content/image-3.jpg" alt="image">
-          </div>
-          <div class="swiper-slide stepSlide">
-            <img src="@img/admin/content/image-1.jpg" alt="image">
-          </div>
-          <div class="swiper-slide stepSlide">
-            <img src="@img/admin/content/image-2.jpg" alt="image">
-          </div>
-          <div class="swiper-slide stepSlide">
-            <img src="@img/admin/content/image-3.jpg" alt="image">
-          </div>
+        <img src="@img/admin/content/image-2.jpg" alt="image" class="stepsSlidePrev stepsSlideThumb">
 
+        <div class="stepSliderW">
+
+          <button class="navArrow navArrowPrev">
+            <svg>
+              <use xlink:href="img/icons/icons.svg#arrow-prev"></use>
+            </svg>
+          </button>
+          <div class="stepsSliderInner">
+            <div class="swiper stepSlider">
+              <div class="swiper-wrapper">
+
+                <div class="swiper-slide stepSlide">
+                  <img src="@img/admin/content/image-1.jpg" alt="image">
+                </div>
+                <div class="swiper-slide stepSlide">
+                  <img src="@img/admin/content/image-2.jpg" alt="image">
+                </div>
+                <div class="swiper-slide stepSlide">
+                  <img src="@img/admin/content/image-3.jpg" alt="image">
+                </div>
+                <div class="swiper-slide stepSlide">
+                  <img src="@img/admin/content/image-1.jpg" alt="image">
+                </div>
+                <div class="swiper-slide stepSlide">
+                  <img src="@img/admin/content/image-2.jpg" alt="image">
+                </div>
+                <div class="swiper-slide stepSlide">
+                  <img src="@img/admin/content/image-3.jpg" alt="image">
+                </div>
+
+              </div>
+
+            </div>
+          </div>
+          <button class="navArrow navArrowNext">
+            <svg>
+              <use xlink:href="img/icons/icons.svg#arrow-next"></use>
+            </svg>
+          </button>
         </div>
-        <div class="swiper-pagination"></div>
+
+
+
+        <img src="@img/admin/content/image-3.jpg" alt="image" class="stepsSlideNext stepsSlideThumb">
+
       </div>
+      <div class="swiper-pagination"></div>
+
     </div>
 
   </div>
