@@ -68,6 +68,16 @@
           &::before {
             background-color: var(--success);
           }
+					&::after {
+						content: '';
+						position: absolute;
+						left: 0;
+						right: 0;
+						margin: auto;
+						width: 16px;
+						height: 16px;
+						background: url('@img/icons/check-white.svg') no-repeat center center / contain;
+					}
         }
       }
       .footerStepTitle {
