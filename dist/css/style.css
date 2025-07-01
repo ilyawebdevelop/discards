@@ -1407,10 +1407,29 @@ h3,
 
 .stepBlock {
   padding-top: 70px;
-  display: none;
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+@media (max-width: 991px) {
+  .stepBlock {
+    opacity: 1;
+    visibility: visible;
+    position: unset;
+    display: none;
+  }
 }
 .stepBlock.active {
-  display: block;
+  opacity: 1;
+  visibility: visible;
+  position: unset;
+}
+@media (max-width: 991px) {
+  .stepBlock.active {
+    display: block;
+  }
 }
 @media (max-width: 767px) {
   .stepBlock {

@@ -492,7 +492,7 @@ h3,
 	}
 
 	@media(max-width: 575px) {
-			height: 48vw;
+		height: 48vw;
 	}
 
 	@media(max-width: 575px) {
@@ -576,9 +576,28 @@ h3,
 
 .stepBlock {
 	padding-top: 70px;
-	display: none;
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+	@media(max-width: 991px){
+		opacity: 1;
+		visibility: visible;
+		position: unset;
+		display: none;
+	}
+
+
 	&.active {
-		display: block;
+		opacity: 1;
+		visibility: visible;
+		position: unset;
+		@media(max-width: 991px){
+			display: block;
+			
+		}
+
 	}
 
 	@media(max-width: 767px) {
