@@ -669,6 +669,7 @@ h3,
 	flex-shrink: 0;
 	border-radius: 8px;
 	box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.16);
+	transition: opacity .2s linear;
 
 	@media(max-width: 767px) {
 		display: none;
@@ -676,6 +677,11 @@ h3,
 
 	&.hide {
 		opacity: 0;
+		visibility: hidden;
+	}
+	cursor: pointer;
+	&:hover {
+		opacity: .8;
 	}
 }
 
@@ -878,9 +884,4 @@ h3,
 
 input[type="time"]::-webkit-calendar-picker-indicator {
 	background: transparent;
-
-
-
-	// position: absolute;
-
 }

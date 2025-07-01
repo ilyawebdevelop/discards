@@ -2276,6 +2276,8 @@ h3,
   flex-shrink: 0;
   border-radius: 8px;
   box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.16);
+  transition: opacity 0.2s linear;
+  cursor: pointer;
 }
 @media (max-width: 767px) {
   .stepsSlideThumb {
@@ -2284,6 +2286,10 @@ h3,
 }
 .stepsSlideThumb.hide {
   opacity: 0;
+  visibility: hidden;
+}
+.stepsSlideThumb:hover {
+  opacity: 0.8;
 }
 
 .stepSliderW {
@@ -2569,26 +2575,6 @@ input[type=time]::-webkit-calendar-picker-indicator {
 .meat.active,
 .bottom-bun.active {
   opacity: 0;
-}
-
-.modal {
-  display: none;
-}
-.modal-header {
-  padding: 45px;
-  padding-bottom: 25px;
-  border-bottom: none;
-}
-.modal-body {
-  padding: 45px;
-  padding-top: 0;
-}
-.modal-title {
-  font-size: 23px;
-}
-.modal .btn-close {
-  background: none;
-  opacity: 1;
 }
 
 .tabs__nav {

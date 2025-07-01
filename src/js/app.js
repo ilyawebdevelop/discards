@@ -17,6 +17,8 @@ new AirDatepicker('.input-date', {
 
 
 function getSwiperImage() {
+
+	
 	setTimeout(() => {
 
 		let stepsSlidePrev = this.el.closest('.stepBlock').querySelector('.stepsSlidePrev');
@@ -56,6 +58,56 @@ function getSwiperImage() {
 	}, "100");
 
 }
+function getSwiperImage_1() {
+
+	
+	setTimeout(() => {
+
+		let stepsSlidePrev = this.el.closest('.stepBlock').querySelector('.stepsSlidePrev');
+		let stepsSlideNext = this.el.closest('.stepBlock').querySelector('.stepsSlideNext');
+
+		if (stepsSlidePrev && this.el.querySelector(".swiper-slide-prev img")) {
+			let imgPrevSrc = this.el.querySelector(".swiper-slide-prev img").src;
+			stepsSlidePrev.src = imgPrevSrc;
+			stepsSlidePrev.classList.remove('hide');
+		}
+		if (this.el.querySelector(".swiper-slide-prev") == null && stepsSlidePrev) {
+			stepsSlidePrev.classList.add('hide');
+		}
+		if (stepsSlideNext && this.el.querySelector(".swiper-slide-next img")) {
+			let imgNextSrc = this.el.querySelector(".swiper-slide-next img").src;
+			stepsSlideNext.src = imgNextSrc;
+			stepsSlideNext.classList.remove('hide');
+		}
+		if (this.el.querySelector(".swiper-slide-next") == null && stepsSlideNext) {
+			stepsSlideNext.classList.add('hide');
+		}
+
+		let stepsSlideSumPrev = this.el.closest('.stepBlock').querySelector('.stepsSlideSumPrev');
+		let stepsSlideSumNext = this.el.closest('.stepBlock').querySelector('.stepsSlideSumNext');
+
+		let sumPrev = this.el.querySelector(".swiper-slide-prev")?.textContent;
+		let sumNext = this.el.querySelector(".swiper-slide-next")?.textContent;
+
+
+		if (stepsSlideSumPrev) {
+			stepsSlideSumPrev.textContent = sumPrev;
+		}
+		if (stepsSlideSumNext) {
+			stepsSlideSumNext.textContent = sumNext;
+		}
+		stepsSlidePrev?.addEventListener('click', () => {
+			console.log(stepsSlidePrev);
+			this.slidePrev();
+		});
+		stepsSlideNext?.addEventListener('click', () => {
+			console.log(this);
+			this.slideNext();
+		});
+
+	}, "100");
+
+}
 
 // Инициализация слайдера stepSlider
 document.querySelectorAll('.stepSlider').forEach(n => {
@@ -74,9 +126,11 @@ document.querySelectorAll('.stepSlider').forEach(n => {
 			type: 'bullets',
 		},
 		on: {
-			init: getSwiperImage,
+			init: getSwiperImage_1,
 			slideChange: getSwiperImage
 		}
+
+
 	});
 });
 
