@@ -581,7 +581,8 @@ h3,
 	position: absolute;
 	top: 0;
 	left: 0;
-	@media(max-width: 991px){
+
+	@media(max-width: 991px) {
 		opacity: 1;
 		visibility: visible;
 		position: unset;
@@ -593,9 +594,9 @@ h3,
 		opacity: 1;
 		visibility: visible;
 		position: unset;
-		@media(max-width: 991px){
+
+		@media(max-width: 991px) {
 			display: block;
-			
 		}
 
 	}
@@ -863,4 +864,17 @@ h3,
 			}
 		}
 	}
+}
+
+input[type="time"]::-webkit-calendar-picker-indicator {
+	background: transparent;
+	bottom: 0;
+	color: transparent;
+	cursor: pointer;
+	height: auto;
+	left: 0;
+	// position: absolute;
+	right: 0;
+	top: 0;
+	width: auto;
 }
