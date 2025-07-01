@@ -12,7 +12,7 @@ import Swiper, { Navigation, Pagination, Autoplay, Mousewheel, EffectFade, Thumb
 Swiper.use([Navigation, Pagination, Autoplay, Mousewheel, EffectFade, Thumbs, Scrollbar]);
 
 new AirDatepicker('.input-date', {
-	
+	position: "top left",
 })
 
 
@@ -100,6 +100,7 @@ let state4 = document.querySelector('.footerStep-4');
 
 
 footerBtn.addEventListener('click', () => {
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 
 	if (step1.classList.contains('active')) {
 		step1.classList.remove('active');
@@ -142,6 +143,7 @@ footerBtn.addEventListener('click', () => {
 });
 
 state1.addEventListener('click', () => {
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 	step6.classList.remove('active');
 	step5.classList.remove('active');
 	state4.classList.remove('footerStep--success');
@@ -159,6 +161,7 @@ state1.addEventListener('click', () => {
 });
 
 state2.addEventListener('click', () => {
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 	step6.classList.remove('active');
 	step5.classList.remove('active');
 	state4.classList.remove('footerStep--success');
@@ -175,6 +178,7 @@ state2.addEventListener('click', () => {
 });
 
 state3.addEventListener('click', () => {
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 	step6.classList.remove('active');
 	step5.classList.remove('active');
 	state4.classList.remove('footerStep--success');
@@ -191,6 +195,7 @@ state3.addEventListener('click', () => {
 });
 
 state4.addEventListener('click', () => {
+	document.body.scrollTop = document.documentElement.scrollTop = 0;
 	step6.classList.remove('active');
 	step5.classList.remove('active');
 	state4.classList.remove('footerStep--success');

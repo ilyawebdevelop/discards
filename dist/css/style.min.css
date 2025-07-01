@@ -1872,6 +1872,10 @@ section {
 
 .input-time {
   background: url("../img/icons/time.svg") no-repeat right 15px center/24px;
+  text-align: start;
+}
+.input-time::placeholder {
+  text-align: start;
 }
 
 h1,
@@ -2198,6 +2202,8 @@ h3,
     visibility: visible;
     position: unset;
     display: none;
+    top: unset;
+    left: unset;
   }
 }
 .stepBlock.active {
@@ -2208,6 +2214,8 @@ h3,
 @media (max-width: 991px) {
   .stepBlock.active {
     display: block;
+    visibility: unset;
+    opacity: unset;
   }
 }
 @media (max-width: 767px) {
@@ -2450,14 +2458,6 @@ h3,
 
 input[type=time]::-webkit-calendar-picker-indicator {
   background: transparent;
-  bottom: 0;
-  color: transparent;
-  cursor: pointer;
-  height: auto;
-  left: 0;
-  right: 0;
-  top: 0;
-  width: auto;
 }
 
 .button {
