@@ -88,22 +88,38 @@ let step4 = document.querySelector('.step-4');
 let step5 = document.querySelector('.step-5');
 let step6 = document.querySelector('.step-6');
 
+let state1 = document.querySelector('.footerStep-1');
+let state2 = document.querySelector('.footerStep-2');
+let state3 = document.querySelector('.footerStep-3');
+let state4 = document.querySelector('.footerStep-4');
+
+
 
 footerBtn.addEventListener('click', () => {
 
 	if (step1.classList.contains('active')) {
 		step1.classList.remove('active');
 		step2.classList.add('active');
+		state1.classList.remove('footerStep--active');
+		state1.classList.add('footerStep--success');
+		state2.classList.add('footerStep--active');
+
 		return;
 	}
 	if (step2.classList.contains('active')) {
 		step2.classList.remove('active');
 		step3.classList.add('active');
+		state2.classList.remove('footerStep--active');
+		state2.classList.add('footerStep--success');
+		state3.classList.add('footerStep--active');
 		return;
 	}
 	if (step3.classList.contains('active')) {
 		step3.classList.remove('active');
 		step4.classList.add('active');
+		state3.classList.remove('footerStep--active');
+		state3.classList.add('footerStep--success');
+		state4.classList.add('footerStep--active');
 		return;
 	}
 	if (step4.classList.contains('active')) {
@@ -114,9 +130,74 @@ footerBtn.addEventListener('click', () => {
 	if (step5.classList.contains('active')) {
 		step5.classList.remove('active');
 		step6.classList.add('active');
+		state4.classList.remove('footerStep--active');
+		state4.classList.add('footerStep--success');
+		// state3.classList.add('footerStep--active');
 		return;
 	}
 });
 
+state1.addEventListener('click', () => {
+	step6.classList.remove('active');
+	step5.classList.remove('active');
+	state4.classList.remove('footerStep--success');
+	state4.classList.remove('footerStep--active');
+	step4.classList.remove('active');
+	state3.classList.remove('footerStep--success');
+	state3.classList.remove('footerStep--active');
+	step3.classList.remove('active');
+	state2.classList.remove('footerStep--success');
+	state2.classList.remove('footerStep--active');
+	step2.classList.remove('active');
+	state1.classList.remove('footerStep--success');
+	state1.classList.add('footerStep--active');
+	step1.classList.add('active');
+});
 
+state2.addEventListener('click', () => {
+	step6.classList.remove('active');
+	step5.classList.remove('active');
+	state4.classList.remove('footerStep--success');
+	state4.classList.remove('footerStep--active');
+	step4.classList.remove('active')
+	state3.classList.remove('footerStep--success');
+	state3.classList.remove('footerStep--active');
+	step3.classList.remove('active');
+	state2.classList.remove('footerStep--success');
+	state2.classList.add('footerStep--active');
+	step2.classList.add('active');
+	step1.classList.remove('active');
+	state1.classList.add('footerStep--success');
+});
 
+state3.addEventListener('click', () => {
+	step6.classList.remove('active');
+	step5.classList.remove('active');
+	state4.classList.remove('footerStep--success');
+	state4.classList.remove('footerStep--active');
+	step4.classList.remove('active')
+	state3.classList.remove('footerStep--success');
+	state3.classList.add('footerStep--active');
+	step3.classList.add('active');
+	state2.classList.add('footerStep--success');
+	state2.classList.remove('footerStep--active');
+	step2.classList.remove('active');
+	step1.classList.remove('active');
+	state1.classList.add('footerStep--success');
+});
+
+state4.addEventListener('click', () => {
+	step6.classList.remove('active');
+	step5.classList.remove('active');
+	state4.classList.remove('footerStep--success');
+	state4.classList.add('footerStep--active');
+	step4.classList.add('active')
+	state3.classList.add('footerStep--success');
+	state3.classList.remove('footerStep--active');
+	step3.classList.remove('active');
+	state2.classList.add('footerStep--success');
+	state2.classList.remove('footerStep--active');
+	step2.classList.remove('active');
+	step1.classList.remove('active');
+	state1.classList.add('footerStep--success');
+});

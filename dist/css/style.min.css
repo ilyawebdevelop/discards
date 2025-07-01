@@ -1233,6 +1233,7 @@ h3,
   border-radius: 50%;
   border: 2px solid #D8D8D8;
   position: relative;
+  cursor: pointer;
 }
 @media (max-width: 991px) {
   .radioItem label {
@@ -1883,6 +1884,7 @@ h3,
 }
 .footerStep {
   min-width: 160px;
+  cursor: pointer;
 }
 @media (max-width: 991px) {
   .footerStep {
