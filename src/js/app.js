@@ -13,6 +13,7 @@ Swiper.use([Navigation, Pagination, Autoplay, Mousewheel, EffectFade, Thumbs, Sc
 
 new AirDatepicker('.input-date', {
 	position: "top left",
+	timepicker: true,
 })
 
 
@@ -96,12 +97,10 @@ function getSwiperImage_1() {
 		if (stepsSlideSumNext) {
 			stepsSlideSumNext.textContent = sumNext;
 		}
-		stepsSlidePrev?.addEventListener('click', () => {
-			console.log(stepsSlidePrev);
+		stepsSlidePrev?.addEventListener('click', () => {		
 			this.slidePrev();
 		});
 		stepsSlideNext?.addEventListener('click', () => {
-			console.log(this);
 			this.slideNext();
 		});
 
@@ -129,8 +128,6 @@ document.querySelectorAll('.stepSlider').forEach(n => {
 			init: getSwiperImage_1,
 			slideChange: getSwiperImage
 		}
-
-
 	});
 });
 
